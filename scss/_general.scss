@@ -29,6 +29,12 @@ br {
     &:last-child {
         padding-bottom: $line-spacing;
     }
+    & + .evaluated-line {
+        padding-top: 0;
+    }
+    &.evaluated-line {
+        color: #33B5E5;
+    }
 }
 .line {
     padding-top: $line-spacing;
