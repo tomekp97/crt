@@ -120,7 +120,7 @@ function DisplayPastInput(toDisplay, terminalPrompt)
     var pastInputLine = document.createElement('span');
 
     pastInputLine.className = 'past-line';
-    pastInputLine.innerText = terminalPrompt.innerText + '\u00A0' + toDisplay;
+    pastInputLine.innerText = terminalPrompt.innerText + CHAR_SPACE + toDisplay;
 
     pastInput.appendChild(pastInputLine);
 }
