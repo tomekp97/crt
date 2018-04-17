@@ -22,6 +22,32 @@ function Prompt(user, atWhat, caret)
     return prompt;
 }
 
+function EvaluateInput(inputToEvaluate)
+{
+    var response = '';
+
+    /* TODO - switch() is temporary, replace with RegExp() */
+    switch(inputToEvaluate)
+    {
+        case 'nuke':
+            response = "Launching nukes...";
+            break;
+
+        case 'peace':
+            response = "You got it, goody-two-shoes.";
+            break;
+
+        case 'git' + CHAR_SPACE + 'init':
+            response = "Repo initialised";
+            break;
+
+        default:
+            response = "Command '"+ inputToEvaluate +"' unknown!";
+    }
+
+    return response;
+}
+
 function GetUserInput(terminalPrompt)
 {
     console.log("Listening for keypress...");
