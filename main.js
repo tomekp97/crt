@@ -10,9 +10,9 @@ var command = document.getElementById('command');
 
 function Prompt(user, atWhat, caret)
 {
-    var promptValue = user + '@' + atWhat + ' ' + caret + ' ';
-
+    var promptValue = user + '@' + atWhat + caret;
     var prompt = document.createElement('span');
+
     prompt.className = 'prompt';
     prompt.innerText = promptValue;
 
