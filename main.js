@@ -5,8 +5,7 @@ var textInput = document.getElementsByClassName('user-text')[0];
 var _textInputExisting = textInput.textContent;
 var _textInputFinal = '';
 
-// Prompt
-
+var command = document.getElementById('command');
 
 function Prompt(user, atWhat, caret)
 {
@@ -23,7 +22,7 @@ function GetUserInput(terminalPrompt)
 {
     console.log("Listening for keypress...");
 
-    textInput.prepend(terminalPrompt);
+    command.prepend(terminalPrompt);
 
     document.onkeypress = function(e)
     {
