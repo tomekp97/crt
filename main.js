@@ -118,11 +118,17 @@ function GetUserInput(terminalPrompt)
 function DisplayPastInput(toDisplay, terminalPrompt)
 {
     var pastInputLine = document.createElement('span');
+    var evaluatedInputLine = document.createElement('span');
+    var _evaluatedInput = EvaluateInput(toDisplay);
 
     pastInputLine.className = 'past-line';
     pastInputLine.innerText = terminalPrompt.innerText + CHAR_SPACE + toDisplay;
 
+    evaluatedInputLine.className = 'evaluated-line past-line';
+    evaluatedInputLine.innerText = _evaluatedInput;
+
     pastInput.appendChild(pastInputLine);
+    pastInput.appendChild(evaluatedInputLine);
 }
 
 window.onload = function() {
