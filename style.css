@@ -1,36 +1,42 @@
 body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    font-family: monospace;
-    font-size: 16px;
-    color: #00FF00;
-}
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: monospace;
+  font-size: 16px;
+  color: #00FF00; }
+
 .screen {
-    height: 100vh;
-    width: 100%;
-    background-color: #333;
-}
+  height: 100vh;
+  width: 100%;
+  background-color: #333; }
+
 .text-wrapper {
-    padding: 20px;
-}
-.line {
-    line-height: 1;
-    display: inline-block;
-    background-color: #666;
-}
-.user-text {
-    float: left;
-    margin-top: 1px;
-}
+  padding: 20px; }
+
 .past-line {
-    display: block;
-    margin-top: 1px;
-}
+  display: block; }
+  .past-line + .past-line {
+    padding-top: 10px; }
+  .past-line:last-child {
+    padding-bottom: 10px; }
+
+.line {
+  padding-top: 10px;
+  line-height: 1;
+  display: inline-block; }
+
+.prompt {
+  display: inline-block; }
+
+.user-text, .prompt {
+  float: left; }
+
 #blinker {
-    display: inline-block;
-    vertical-align: middle;
-    height: 20px;
-    width: 10px;
-    background-color: #00FF00;
-}
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  width: 10px;
+  background-color: #00FF00; }
+
+/*# sourceMappingURL=style.css.map */
