@@ -1,10 +1,11 @@
 var pastInput = document.getElementById('past-user-input');
 
-// User Input
+// User input
 var textInput = document.getElementsByClassName('user-text')[0];
 var _textInputExisting = textInput.textContent;
 var _textInputFinal = '';
 
+// Command text and prompt wrapper
 var command = document.getElementById('command');
 
 function Prompt(user, atWhat, caret)
