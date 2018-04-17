@@ -52,7 +52,6 @@ function GetUserInput(terminalPrompt)
 
 function DisplayPastInput(toDisplay, terminalPrompt)
 {
-    console.log(terminalPrompt);
     var pastInputLine = document.createElement('span');
     pastInputLine.className = 'past-line';
     pastInputLine.innerText = terminalPrompt.innerText + toDisplay;
