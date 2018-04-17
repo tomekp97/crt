@@ -58,14 +58,14 @@ function GetUserInput(terminalPrompt)
     document.onkeydown = function(e) {
         e = e.keyCode;
 
-        switch(e) {
+        switch(e)
+        {
             // Backspace
             case 8:
-
                 var lastIndex = _textInputExisting.length - 1;
                 var lastLetter = _textInputExisting[lastIndex];
 
-                if (lastLetter != undefined) {
+                if(lastLetter != undefined) {
                     _textInputExisting = _textInputExisting.slice(0, lastIndex);
                     textInput.textContent = _textInputExisting;
 
