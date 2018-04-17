@@ -25,6 +25,31 @@ function GetUserInput(terminalPrompt)
 
     command.prepend(terminalPrompt);
 
+    // Detect specific non-alphanumeric keys
+    document.onkeydown = function(e) {
+        e = e.keyCode;
+
+        switch(e) {
+            // Backspace
+            case 8:
+
+                var lastIndex = _textInputExisting.length - 1;
+                var lastLetter = _textInputExisting[lastIndex];
+
+                if (lastLetter != undefined) {
+                    _textInputExisting = _textInputExisting.slice(0, lastIndex);
+                    textInput.textContent = _textInputExisting;
+
+                    console.log("Last letter: " + lastLetter);
+                    console.log("Exisintg text after slice(): " + _textInputExisting);   
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Detect alphanumeric input
     document.onkeypress = function(e)
     {
         e = e.keyCode;
