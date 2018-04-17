@@ -41,6 +41,10 @@ function EvaluateInput(inputToEvaluate)
             response = "Repo initialised";
             break;
 
+        case '':
+            response = "";
+            break;
+
         default:
             response = "Command '"+ inputToEvaluate +"' unknown!";
     }
