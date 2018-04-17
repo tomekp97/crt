@@ -59,15 +59,22 @@ function GetUserInput(terminalPrompt)
         var char = String.fromCharCode(e);
         console.log(e + ' - ' + char);
 
-        if (e === 32) {
-            char = '\u00A0';
+        // Cancel specific characters for formatting purposes
+        switch(e)
+        {
+            case 32:
+                char = CHAR_SPACE;
+                break;
+            case 13:
+                char = '';
+                break;
         }
 
         textInput.textContent = _textInputExisting + char;
         _textInputExisting = textInput.textContent;
 
-        // If keypress is Enter
-        if (e === 13) {
+        // Finalise input when ENTER is pressed
+        if(e === 13) {
             _textInputFinal = _textInputExisting;
 
             textInput.textContent = '';
