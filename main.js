@@ -8,6 +8,9 @@ var _textInputFinal = '';
 // Command text and prompt wrapper
 var command = document.getElementById('command');
 
+// Constants
+var CHAR_SPACE = '\u00A0';
+
 function Prompt(user, atWhat, caret)
 {
     var promptValue = user + '@' + atWhat + caret;
