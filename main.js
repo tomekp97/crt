@@ -31,6 +31,10 @@ function GetUserInput(terminalPrompt)
         var char = String.fromCharCode(e);
         console.log(e + ' - ' + char);
 
+        if (e === 32) {
+            char = '\u00A0';
+        }
+
         textInput.textContent = _textInputExisting + char;
         _textInputExisting = textInput.textContent;
 
