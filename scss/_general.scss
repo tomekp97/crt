@@ -10,6 +10,9 @@ body {
     letter-spacing: 1px;
     color: $text-colour;
 }
+br {
+    display: none;
+}
 .screen {
     height: 100vh;
     width: 100%;
