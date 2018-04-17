@@ -4,6 +4,7 @@ body {
   width: 100%;
   font-family: monospace;
   font-size: 16px;
+  letter-spacing: 1px;
   color: #00FF00; }
 
 .screen {
@@ -27,7 +28,8 @@ body {
   display: inline-block; }
 
 .prompt {
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 10px; }
 
 .user-text, .prompt {
   float: left; }
@@ -35,7 +37,7 @@ body {
 #blinker {
   display: inline-block;
   vertical-align: middle;
-  height: 20px;
+  height: 19px;
   width: 10px;
   background-color: #00FF00; }
 

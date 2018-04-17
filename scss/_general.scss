@@ -7,6 +7,7 @@ body {
     width: 100%;
     font-family: monospace;
     font-size: 16px;
+    letter-spacing: 1px;
     color: $text-colour;
 }
 .screen {
@@ -33,6 +34,7 @@ body {
 }
 .prompt {
     display: inline-block;
+    margin-right: 10px;
 }
 .user-text, .prompt {
     float: left;
@@ -40,7 +42,7 @@ body {
 #blinker {
     display: inline-block;
     vertical-align: middle;
-    height: 20px;
+    height: 19px;
     width: 10px;
     background-color: $text-colour;
 }
