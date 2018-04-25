@@ -8,6 +8,11 @@ var _textInputFinal = '';
 // Command text and prompt wrapper
 var command = document.getElementById('command');
 
+// Hisotry inputs array
+data = {
+    history: []
+}
+
 // Constants
 var CHAR_SPACE = '\u00A0';
 
@@ -20,6 +25,18 @@ function Prompt(user, atWhat, caret)
     prompt.innerText = promptValue;
 
     return prompt;
+}
+
+function StoreHistory(addToHistory)
+{
+    data.history.push(addToHistory);
+    console.log(data.history);
+    return data.history;
+}
+
+function History()
+{
+    
 }
 
 function EvaluateInput(inputToEvaluate)
@@ -60,7 +77,7 @@ function GetUserInput(terminalPrompt)
 
     // Detect specific non-alphanumeric keys
     document.onkeydown = function(e) {
-        e = e.keyCode;
+        e = e.which;
 
         switch(e)
         {
@@ -85,7 +102,7 @@ function GetUserInput(terminalPrompt)
     // Detect alphanumeric input
     document.onkeypress = function(e)
     {
-        e = e.keyCode;
+        e = e.which;
         var char = String.fromCharCode(e);
         console.log(e + ' - ' + char);
 
@@ -96,6 +113,7 @@ function GetUserInput(terminalPrompt)
                 char = CHAR_SPACE;
                 break;
             case 13:
+            case 0:
                 char = '';
                 break;
         }
@@ -114,6 +132,7 @@ function GetUserInput(terminalPrompt)
 
             DisplayPastInput(_textInputFinal, terminalPrompt);
 
+            StoreHistory(_textInputFinal);
             return _textInputFinal;
         }
     }
