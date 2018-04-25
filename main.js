@@ -30,13 +30,6 @@ function Prompt(user, atWhat, caret)
 function StoreHistory(addToHistory)
 {
     data.history.push(addToHistory);
-    console.log(data.history);
-    return data.history;
-}
-
-function History()
-{
-    
 }
 
 function EvaluateInput(inputToEvaluate)
