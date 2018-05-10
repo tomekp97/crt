@@ -1,3 +1,6 @@
+// Constants
+var CHAR_SPACE = '\u00A0';
+
 var pastInput = document.getElementById('past-user-input');
 
 // User input
@@ -15,8 +18,6 @@ data = {
 }
 var traverse = data.history.length;
 
-// Constants
-var CHAR_SPACE = '\u00A0';
 
 function Prompt(user, atWhat, caret)
 {
