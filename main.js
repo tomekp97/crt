@@ -32,7 +32,7 @@ function Prompt(user, atWhat, caret)
     var prompt = document.createElement('span');
 
     prompt.className = 'prompt';
-    prompt.innerText = promptValue;
+    prompt.innerHTML = promptValue;
 
     return prompt;
 }
@@ -188,10 +188,10 @@ function DisplayPastInput(toDisplay, terminalPrompt)
     var _evaluatedInput = EvaluateInput(toDisplay);
 
     pastInputLine.className = 'past-line';
-    pastInputLine.innerText = terminalPrompt.innerText + CHAR_SPACE + toDisplay;
+    pastInputLine.innerHTML = terminalPrompt.innerHTML + CHAR_SPACE + toDisplay;
 
     evaluatedInputLine.className = 'evaluated-line past-line';
-    evaluatedInputLine.innerText = _evaluatedInput;
+    // evaluatedInputLine.innerHTML = _evaluatedInput;
 
     pastInput.appendChild(pastInputLine);
     pastInput.appendChild(evaluatedInputLine);
