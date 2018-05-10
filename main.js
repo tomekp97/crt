@@ -120,13 +120,11 @@ function GetUserInput(terminalPrompt)
             // Up arrow
             case 38:
                 pastCommand = CycleThroughHistory('up')
-                textInput.textContent = pastCommand;
-                _textInputExisting = textInput.textContent;
+                AmendTerminalInputValues(pastCommand);
                 break;
             case 40:
                 pastCommand = CycleThroughHistory('down')
-                textInput.textContent = pastCommand;
-                _textInputExisting = textInput.textContent;
+                AmendTerminalInputValues(pastCommand);
                 break;
             default:
                 break;
@@ -150,9 +148,7 @@ function GetUserInput(terminalPrompt)
                 char = '';
                 break;
         }
-
-        textInput.textContent = _textInputExisting + char;
-        _textInputExisting = textInput.textContent;
+        AmendTerminalInputValues(_textInputExisting + char);
 
         // Finalise input when ENTER is pressed
         if(e === 13) {
