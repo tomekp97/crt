@@ -10,8 +10,10 @@ var command = document.getElementById('command');
 
 // Hisotry inputs array
 data = {
-    history: []
+    history: [],
+    currentIndex: 0
 }
+var traverse = data.history.length;
 
 // Constants
 var CHAR_SPACE = '\u00A0';
@@ -27,9 +29,32 @@ function Prompt(user, atWhat, caret)
     return prompt;
 }
 
-function StoreHistory(addToHistory)
+function AddToHistory(pastCommand)
 {
-    data.history.push(addToHistory);
+    data.history.push(pastCommand);
+    traverse = data.history.length;
+}
+
+function CycleThroughHistory(direction)
+{
+    var totalHistoryCommands = data.history.length;
+
+    if(direction === 'up')
+    {
+        traverse += -1;
+    } else {
+        traverse += 1;
+    }
+
+    if(traverse > totalHistoryCommands - 1)
+    {
+        traverse = totalHistoryCommands - 1;
+    } else if(traverse < 0) {
+        traverse = 0;
+    }
+
+    var pastCommand = data.history[traverse];
+    return pastCommand;
 }
 
 function EvaluateInput(inputToEvaluate)
@@ -64,7 +89,6 @@ function EvaluateInput(inputToEvaluate)
 
 function GetUserInput(terminalPrompt)
 {
-    console.log("Listening for keypress...");
 
     command.prepend(terminalPrompt);
 
@@ -82,10 +106,21 @@ function GetUserInput(terminalPrompt)
                 if(lastLetter != undefined) {
                     _textInputExisting = _textInputExisting.slice(0, lastIndex);
                     textInput.textContent = _textInputExisting;
-
-                    console.log("Last letter: " + lastLetter);
-                    console.log("Exisintg text after slice(): " + _textInputExisting);   
                 }
+                if (_textInputExisting.length == 0) {
+                    traverse = data.history.length;   
+                }
+                break;
+            // Up arrow
+            case 38:
+                pastCommand = CycleThroughHistory('up')
+                textInput.textContent = pastCommand;
+                _textInputExisting = textInput.textContent;
+                break;
+            case 40:
+                pastCommand = CycleThroughHistory('down')
+                textInput.textContent = pastCommand;
+                _textInputExisting = textInput.textContent;
                 break;
             default:
                 break;
@@ -97,7 +132,6 @@ function GetUserInput(terminalPrompt)
     {
         e = e.which;
         var char = String.fromCharCode(e);
-        console.log(e + ' - ' + char);
 
         // Cancel specific characters for formatting purposes
         switch(e)
@@ -121,11 +155,9 @@ function GetUserInput(terminalPrompt)
             textInput.textContent = '';
             _textInputExisting = '';
 
-            console.log("User input: " + _textInputFinal);
-
             DisplayPastInput(_textInputFinal, terminalPrompt);
 
-            StoreHistory(_textInputFinal);
+            AddToHistory(_textInputFinal);
             return _textInputFinal;
         }
     }
