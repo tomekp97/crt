@@ -1,6 +1,8 @@
 // Constants
 var CHAR_SPACE = '\u00A0';
 
+var welcomeMessage_Line1 = "TP terminal version 1.0 (2018)";
+
 var pastInput = document.getElementById('past-user-input');
 
 // User input
@@ -193,9 +195,17 @@ function DisplayPastInput(toDisplay, terminalPrompt)
 
     pastInput.appendChild(pastInputLine);
     pastInput.appendChild(evaluatedInputLine);
+
+    TypeWriter(evaluatedInputLine, _evaluatedInput);
 }
 
 window.onload = function() {
     var prompt = Prompt("tomek","matrix","$");
     GetUserInput(prompt);
+    var wlecomeMessageBlock = document.getElementById('welcome-message');
+    
+    TypeWriter(wlecomeMessageBlock, welcomeMessage_Line1);
+    setTimeout(function() {
+        GetUserInput(prompt);
+    }, 1000);
 }
