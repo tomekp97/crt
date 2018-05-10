@@ -18,6 +18,11 @@ data = {
 }
 var traverse = data.history.length;
 
+function AmendTerminalInputValues(textInput_Value)
+{
+    textInput.textContent = textInput_Value;
+    _textInputExisting = textInput.textContent;
+}
 
 function Prompt(user, atWhat, caret)
 {
