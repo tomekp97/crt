@@ -165,6 +165,20 @@ function GetUserInput(terminalPrompt)
     }
 }
 
+function TypeWriter(element, textToType, speed=20)
+{
+    var iterator = 0;
+    var textLength = textToType.length;
+
+    setInterval(function() {
+        if(iterator < textLength)
+        {
+            element.innerHTML += textToType.charAt(iterator);
+            iterator++;
+        }
+    }, speed);
+}
+
 function DisplayPastInput(toDisplay, terminalPrompt)
 {
     var pastInputLine = document.createElement('span');
