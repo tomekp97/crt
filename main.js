@@ -201,7 +201,6 @@ function DisplayPastInput(toDisplay, terminalPrompt)
 
 window.onload = function() {
     var prompt = Prompt("tomek","matrix","$");
-    GetUserInput(prompt);
     var wlecomeMessageBlock = document.getElementById('welcome-message');
     
     TypeWriter(wlecomeMessageBlock, welcomeMessage_Line1);
