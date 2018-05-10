@@ -1,0 +1,34 @@
+.past-line {
+    display: block;
+    & + .past-line {
+        padding-top: $line-spacing;
+    }
+    &:last-child {
+        padding-bottom: $line-spacing;
+    }
+    & + .evaluated-line {
+        padding-top: 0;
+    }
+    &.evaluated-line {
+        color: #33B5E5;
+    }
+}
+.line {
+    padding-top: $line-spacing;
+    line-height: 1;
+    display: inline-block;
+}
+.prompt {
+    display: inline-block;
+    margin-right: 10px;
+}
+.user-text, .prompt {
+    float: left;
+}
+#blinker {
+    display: inline-block;
+    vertical-align: middle;
+    height: 19px;
+    width: 10px;
+    background-color: $text-colour;
+}
