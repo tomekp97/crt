@@ -26,9 +26,10 @@
     float: left;
 }
 #blinker {
+    animation: blinker 1s steps(1, end) infinite;
     display: inline-block;
-    vertical-align: middle;
-    height: 19px;
-    width: 10px;
-    background-color: $text-colour;
+    font-size: 35px;
+    position: relative;
+    top: -8px;
+    left: -8px;
 }
