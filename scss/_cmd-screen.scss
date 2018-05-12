@@ -23,8 +23,9 @@ $screen-height: 550px;
         position: relative;
         @include transition(margin-top, 0.2s, ease, 0s);
         animation: cmd-text-shadow 8s cubic-bezier(0, 4.23, 1,-2.68) infinite alternate,
-                   cmd-skew 10s cubic-bezier(0, 1.76, 0, -0.96) infinite forwards,
-                   cmd-shift 10s steps(11, end) infinite;
+                   cmd-skew 10s steps(4) infinite alternate-reverse,
+                   cmd-shift 10s steps(11, end) infinite,
+                   cmd-super-shake 18s steps(1) infinite forwards 5s;
     }
 }
 .screen-effects {
