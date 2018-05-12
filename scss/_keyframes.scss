@@ -121,6 +121,37 @@
     }
 }
 
+@keyframes cmd-super-shake {
+    0% {
+        top: 20px;
+        left: 20px;
+    }
+    1% {
+        top: 0;
+        left: 0;
+    }
+    10% {
+        top: 25px;
+        left: -70px;
+    }
+    11% {
+        top: 0;
+        left: 0;
+    }
+    50% {
+        top: -10px;
+        left: 30px;
+    }
+    51% {
+        top: 0;
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
 @keyframes scanlines {
     0% {
         top: 0;
