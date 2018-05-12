@@ -70,6 +70,57 @@
     }
 }
 
+@keyframes cmd-shift {
+    0% {
+        top: 2px;
+        left: 1px;
+    }
+    3% {
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        top: -2px;
+        left: -1px;
+    }
+    30% {
+        top: 0px;
+        left: 0px;
+    }
+    50% {
+        top: -2px;
+        left: 1px;
+    }
+    55% {
+        top: 1px;
+        left: 0px;
+    }
+    57% {
+        top: 0px;
+        left: 0px;
+    }
+    70% {
+        top: 1px;
+        left: -2px;
+    }
+    72% {
+        top: 0px;
+        left: 0px;
+    }
+    90% {
+        top: -1px;
+        left: 0px;
+    }
+    92% {
+        top: 0px;
+        left: 0px;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+    }
+}
+
 @keyframes scanlines {
     0% {
         top: 0;
