@@ -1,0 +1,69 @@
+@mixin transition( $effect, $time, $easing, $delay ) {
+    -webkit-transition: $effect $time $easing;
+    -moz-transition: $effect $time $easing;
+    -ms-transition: $effect $time $easing;
+    transition: $effect $time $easing;
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -ms-transition-delay: $delay;
+    transition-delay: $delay;
+}
+@mixin translateX($x-pos, $x-pos-change) {
+    left: $x-pos;
+    -webkit-transform: translateX($x-pos-change);
+    -moz-transform: translateX($x-pos-change);
+    -ms-transform: translateX($x-pos-change);
+    -o-transform: translateX($x-pos-change);
+    transform: translateX($x-pos-change);
+}
+@mixin translateY($y-pos, $y-pos-change) {
+    top: $y-pos;
+    -webkit-transform: translateY($y-pos-change);
+    -moz-transform: translateY($y-pos-change);
+    -ms-transform: translateY($y-pos-change);
+    -o-transform: translateY($y-pos-change);
+    transform: translateY($y-pos-change);
+}
+@mixin translate($x-pos, $y-pos, $x-pos-change, $y-pos-change) {
+    top: $y-pos;
+    left: $x-pos;
+    -webkit-transform: translate($x-pos-change,$y-pos-change);
+    -moz-transform: translate($x-pos-change,$y-pos-change);
+    -ms-transform: translate($x-pos-change,$y-pos-change);
+    -o-transform: translate($x-pos-change,$y-pos-change);
+    transform: translate($x-pos-change,$y-pos-change);
+}
+@mixin rotate($rotation) {
+    -webkit-transform: rotate($rotation);
+    -moz-transform: rotate($rotation);
+    -ms-transform: rotate($rotation);
+    -o-transform: rotate($rotation);
+    transform: rotate($rotation);
+}
+@mixin rotate-origin($rotateDeg, $originX, $originY) {
+    -ms-transform: rotate($rotateDeg); /* IE 9 */
+    -ms-transform-origin: $originX $originY; /* IE 9 */
+    -webkit-transform: rotate($rotateDeg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: $originX $originY; /* Chrome, Safari, Opera */
+    transform: rotate($rotateDeg);
+    transform-origin: $originX $originY;
+}
+@mixin background-opacity($color, $opacity) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+@mixin background-properties {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@mixin background-properties-contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+@mixin background-properties-size($size) {
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position: center;
+}
