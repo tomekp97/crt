@@ -14,25 +14,19 @@ function MouseWheelHandler(e)
 function ScrollCmd(scrollDelta)
 {
     var cmd = ScrollingComponents.cmd[0];
-    // console.log(ScrollingComponents.cmd);
-    // console.log(cmdTop);
     var scrollSpeed = ScrollingComponents.scrollSpeed;
     var scrollOffset;
 
     if (scrollDelta == 1)
     {
-        console.log(ScrollingComponents.scrollOffset);
         if (ScrollingComponents.scrollOffset == 0) {
             ScrollingComponents.scrollOffset = 0;
         } else {
             ScrollingComponents.scrollOffset += scrollSpeed;
         }
-        console.log("mouse wheel UP");
     }
     if(scrollDelta == -1) {
-        console.log(ScrollingComponents.scrollOffset);
         ScrollingComponents.scrollOffset += -scrollSpeed;
-        console.log("mouse wheel DOWN");
     }
 
     scrollOffset = ScrollingComponents.scrollOffset;
