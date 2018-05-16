@@ -16,7 +16,13 @@
 .line {
     padding-top: $line-spacing;
     line-height: 1;
+    max-width: 100%;
     display: inline-block;
+}
+.printed-line {
+    white-space: pre-line;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 .prompt {
     display: inline-block;
