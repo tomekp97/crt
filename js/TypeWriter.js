@@ -1,4 +1,4 @@
-function TypeWriter(speed=20)
+function TypeWriter(speed=10)
 {
     this.speed = speed;
     this.ITERATOR = 0;
