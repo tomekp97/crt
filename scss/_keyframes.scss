@@ -211,3 +211,12 @@
         box-shadow: 0px 0px 20px 2px red;
     }
 }
+
+@keyframes show-prompt {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -33,3 +33,6 @@
     top: -8px;
     left: -8px;
 }
+#command {
+    animation: show-prompt 2s steps(1, end) 1;
+}
