@@ -15,7 +15,7 @@ function Terminal()
 Terminal.prototype = {
     constructor: Terminal,
 
-    Welcome: function(message, textOutputElementID)
+    Message: function(textOutputElementID, message)
     {
         textOutput = document.getElementById(textOutputElementID);
         this.TypeWriter.Write(textOutput, message);
