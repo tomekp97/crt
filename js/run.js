@@ -1,5 +1,7 @@
 var Terminal = new Terminal();
 
 window.onload = function(){
-    Terminal.Welcome("Hello World!", 'welcome-message');
+    var message = "### TP shell [ver1.1] - (2018) ###\n\
+    ==================================";
+    Terminal.Message('welcome-message', message);
 }
