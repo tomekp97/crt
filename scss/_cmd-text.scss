@@ -39,6 +39,10 @@
     top: -8px;
     left: -8px;
 }
+#terminal-screen[hidden] #command {
+    display: none;
+}
 #command {
+    display: block;
     animation: show-prompt 2s steps(1, end) 1;
 }
