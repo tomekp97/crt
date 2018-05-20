@@ -1,7 +1,10 @@
 function EvaluateInput()
 {
+    this.CommandsObject = new Commands()
     this.RESPONSE = '';
     this.CHAR_SPACE = '\u00A0';
+    this.COMMANDS_LIST = this.CommandsObject.CommandsList();
+    this.AVAILABLE_COMMANDS = this.CommandsObject.AvailableCommands() ;
 }
 
 EvaluateInput.prototype = {
@@ -9,28 +12,18 @@ EvaluateInput.prototype = {
 
     InputCheck: function(inputToEvaluate)
     {
-        /* TODO - switch() is temporary, replace with RegExp() */
-        switch(inputToEvaluate)
+        if (this.AVAILABLE_COMMANDS.indexOf(inputToEvaluate) != -1)
         {
-            case 'nuke':
-                this.RESPONSE = "Launching nukes...";
-                break;
-        
-            case 'peace':
-                this.RESPONSE = "You got it, goody-two-shoes.";
-                break;
-        
-            case 'git' + this.CHAR_SPACE + 'init':
-                this.RESPONSE = "Repo initialised";
-                break;
-        
-            case '':
-                this.RESPONSE = "";
-                break;
-        
-            default:
-                this.RESPONSE = "Command '"+ inputToEvaluate +"' unknown!";
+            var result = this.COMMANDS_LIST[inputToEvaluate].output;
+            this.RESPONSE = result;
         }
+        else if(inputToEvaluate == '')
+        {
+            this.RESPONSE = '';
+        } else {
+            this.RESPONSE = "Command '"+ inputToEvaluate +"' unknown!";
+        }
+
         return this.RESPONSE;
     }
 
