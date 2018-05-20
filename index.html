@@ -18,12 +18,31 @@
                 <div class="light-effect"></div>
             </div>
             <div class="actual-cmd-text">
-                <div id="welcome-message"></div>
-                <div class="line">
-                    <div id="past-user-input"></div>
-                    <div id="command">
-                        <span class="user-text"></span>
-                        <span id="blinker">&#9646;</span>
+                <div id="login-screen">
+                    <div id="login-message"></div>
+                    <form action="" id="username-form">
+                        <label for="username" id="username-label">
+                            Username:
+                            <input type="text" name="username" id="username" autofocus>
+                        </label>
+                        <p id="password-type" hidden>
+                            Password:
+                            <div id="simulated-password"></div>
+                        </p>
+                        <input type="submit" id="username-submit" hidden>
+                    </form>
+                </div>
+                <div id="loading-screen" hidden>
+                    <span id="load-bar"></span>
+                </div>
+                <div id="terminal-screen" hidden>
+                    <div id="welcome-message"></div>
+                    <div class="line">
+                        <div id="past-user-input"></div>
+                        <div id="command">
+                            <span class="user-text"></span>
+                            <span id="blinker">&#9646;</span>
+                        </div>
                     </div>
                 </div>
             </div>
