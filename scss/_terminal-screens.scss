@@ -1,0 +1,49 @@
+#login-screen {
+    #username-label {
+        display: block;
+    }
+    input {
+        background-color: transparent;
+        color: $text-colour;
+        font-family: $font;
+        font-size: $font-size;
+        border: none;
+        &:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+    #password-type[hidden] {
+        display: none;
+    }
+    #password-type, #simulated-password {
+        display: inline-block;
+    }
+    #simulated-password {
+        padding-left: 7px;
+    }
+}
+
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:before {
+        content: "Loading...";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #load-bar {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-family: 'VT323';
+        font-size: 20px;
+    }
+}
