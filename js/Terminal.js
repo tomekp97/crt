@@ -1,6 +1,5 @@
 function Terminal()
 {
-    this.EventHandler = new EventHandler();
     this.Prompt = new Prompt('tomek', 'matrix', '$');
     this.TypeWriter = new TypeWriter();
     this.EvaluateInput = new EvaluateInput();
