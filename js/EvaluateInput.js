@@ -17,6 +17,10 @@ EvaluateInput.prototype = {
             var result = this.COMMANDS_LIST[inputToEvaluate].output;
             this.RESPONSE = result;
         }
+        else if(inputToEvaluate == "cmds")
+        {
+            this.RESPONSE = this.AVAILABLE_COMMANDS.join('\n');
+        }
         else if(inputToEvaluate == '')
         {
             this.RESPONSE = '';
