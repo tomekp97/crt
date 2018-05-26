@@ -4,7 +4,7 @@ function EvaluateInput()
     this.RESPONSE = '';
     this.CHAR_SPACE = '\u00A0';
     this.COMMANDS_LIST = this.CommandsObject.CommandsList();
-    this.AVAILABLE_COMMANDS = this.CommandsObject.AvailableCommands() ;
+    this.AVAILABLE_COMMANDS = this.CommandsObject.AvailableCommands();
 }
 
 EvaluateInput.prototype = {
