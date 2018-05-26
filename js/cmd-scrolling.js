@@ -19,7 +19,7 @@ function DetectLastCommandPastScreenHeight(e)
 
     var key = e.keyCode;
 
-    if ((cmdInputHeight + 60) > mainScreenHeight) {
+    if ((cmdInputHeight + 60) >= mainScreenHeight) {
         var difference = cmdInputHeight - mainScreenHeight;
         // Account for the prompt/past input and new line.
         difference += 100;
@@ -39,7 +39,7 @@ function ScrollCmd(scrollDelta)
 
     if (scrollDelta == 1)
     {
-        if (ScrollingComponents.scrollOffset == 0) {
+        if (ScrollingComponents.scrollOffset == 0 || ScrollingComponents.scrollOffset >= 5) {
             ScrollingComponents.scrollOffset = 0;
         } else {
             ScrollingComponents.scrollOffset += scrollSpeed;
