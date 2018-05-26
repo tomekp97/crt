@@ -44,7 +44,7 @@ function ScreenSwap(shellUser)
             _login.screen.setAttribute('hidden', 'hidden');
             _loading.screen.removeAttribute('hidden');
             
-            Typer.Write(_loading.loadBar, "####################################################################################################");
+            Typer.Write(_loading.loadBar, "############");
             
             setTimeout(function()
             {
