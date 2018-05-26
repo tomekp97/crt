@@ -8,15 +8,16 @@ function GetCookie(name)
     }
 }
 
-function TerminalSetup()
+function TerminalSetup(shellUser)
 {
-    var TerminalShell = new Terminal();
+    var TerminalShell = new Terminal(shellUser);
     var message = "(c) TP shell [ver1.1] - (2018) \n\
-    ------------------------------";
+    ------------------------------\n\
+    Type 'cmds' to view a list of custom commands.";
     TerminalShell.Message('welcome-message', message);
 }
 
-function ScreenSwap()
+function ScreenSwap(shellUser)
 {
     var Typer = new TypeWriter(60);
     var _login = {
@@ -49,8 +50,8 @@ function ScreenSwap()
             {
                 _loading.screen.setAttribute('hidden', 'hidden');
                 _terminal.screen.removeAttribute('hidden');
-                TerminalSetup();
-            }, 6000)
+                TerminalSetup(shellUser);
+            }, 1000)
         }, 1000)
     }, 1000);    
 }
@@ -66,6 +67,6 @@ function Setup()
         e.preventDefault();
         form.removeChild(submit);
         document.cookie = "tpshellusername=" + username.value;
-        ScreenSwap();
+        ScreenSwap(username.value);
     }
 }

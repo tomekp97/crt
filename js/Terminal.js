@@ -1,6 +1,7 @@
-function Terminal()
+function Terminal(shellUser)
 {
-    this.Prompt = new Prompt('tomek', 'matrix', '$');
+    this.shellUser = shellUser;
+    this.Prompt = new Prompt(this.shellUser, 'matrix', '$');
     this.TypeWriter = new TypeWriter();
     this.EvaluateInput = new EvaluateInput();
     this.GetUserInput = new GetUserInput(this.Prompt, this.TypeWriter, this.EvaluateInput);
