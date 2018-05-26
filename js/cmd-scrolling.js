@@ -11,6 +11,26 @@ function MouseWheelHandler(e)
     ScrollCmd(delta);
 }
 
+function DetectLastCommandPastScreenHeight(e)
+{
+    var cmd = ScrollingComponents.cmd[0];
+    var mainScreenHeight = document.getElementsByClassName('text-wrapper')[0].clientHeight;
+    var cmdInputHeight = ScrollingComponents.cmd[0].clientHeight;
+
+    var key = e.keyCode;
+
+    if ((cmdInputHeight + 60) > mainScreenHeight) {
+        var difference = cmdInputHeight - mainScreenHeight;
+        // Account for the prompt/past input and new line.
+        difference += 100;
+        mainScreenHeight += difference;
+
+        ScrollingComponents.scrollOffset = -difference;
+
+        cmd.setAttribute('style', 'margin-top: '+ -difference +'px;');
+    }
+}
+
 function ScrollCmd(scrollDelta)
 {
     var cmd = ScrollingComponents.cmd[0];
@@ -36,3 +56,4 @@ function ScrollCmd(scrollDelta)
 }
 
 document.addEventListener('mousewheel', MouseWheelHandler, false);
+document.addEventListener('keydown', DetectLastCommandPastScreenHeight, false);
